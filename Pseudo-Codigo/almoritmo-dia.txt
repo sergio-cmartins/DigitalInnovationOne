@@ -1,0 +1,37 @@
+inicio dia
+	acordar
+	escovar dentes
+	tomar banho
+	ir à padaria
+	fazer café da manhã
+	tomar café da tarde
+	limpar mesa e lavar louças café
+	escovar os dentes
+	até (horário almoço)
+		estudar
+			abrir site digital innovation one
+			iniciar proxima lição
+	fim até
+	comprar almoço
+	almoçar
+	limpar mesa e lavar louças almoço
+	escovar os dentes
+	se (aulas pendentes)
+		terminar aulas pendentes
+	fim se
+	verificar emails
+	se (propostas de emprego)
+		enviar curriculos
+	fim se
+	preparar café da tarde
+	tomar café da tarde
+	limpar mesa e lavar louça café da tarde
+	jogar com amigos
+	preparar janta
+	jantar
+	limpar mesa e lavar loucas janta
+	escovar os dentes
+	assistir filmes ou seriados
+	tomar banho
+	dormir
+fim dia

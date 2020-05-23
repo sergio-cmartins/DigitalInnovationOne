@@ -1,0 +1,28 @@
+inicio do comentario
+	referente ao jogo pinguins numa fria
+	https://rachacuca.com.br/jogos/pinguins-numa-fria/
+fim do comentário
+
+inicio do jogo
+	move filhote verde para gelo
+	move pai verde para gelo
+	move o gelo
+	move pai verde para a margem
+	move o gelo
+	move o filhote azul para o gelo
+	move o gelo
+	move o filhote verde para a margem
+	move o gelo
+	move o pai azul para o gelo
+	move o gelo
+	move o pai azul para a margem
+	move o gelo
+	move o filhote vermelho para o gelo
+	move o gelo
+	move o filhote azul para a margem 
+	move o gelo
+	move o pai vermelhor para o gelo
+	move o gelo
+	move o pai vermelho para a margem
+	move o filhote vermelho para a margem
+fim do jogo
