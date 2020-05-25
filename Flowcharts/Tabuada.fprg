@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kager"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-25 10:40:53 AM"/>
+        <attribute name="created" value="a2FnZXI7REVTS1RPUC1TRVJHSU87MjAyMC0wNS0yNTsxMDoyMTozNSBBTTsyODE5"/>
+        <attribute name="edited" value="a2FnZXI7REVTS1RPUC1TRVJHSU87MjAyMC0wNS0yNTsxMDo0MDo1MyBBTTsxOzI5Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="fator, iteracao, iteracoes" type="Integer" array="False" size=""/>
+            <assign variable="iteracoes" expression="10"/>
+            <assign variable="iteracao" expression="1"/>
+            <output expression="&quot;Digite o Fator para criar a Tabuada: &quot;" newline="False"/>
+            <input variable="fator"/>
+            <output expression="&quot;Resultado: &quot;" newline="True"/>
+            <while expression="iteracao &lt;= iteracoes">
+                <output expression="fator &amp; &quot; X &quot; &amp; iteracao &amp; &quot; = &quot; &amp; (fator * iteracao)" newline="True"/>
+                <assign variable="iteracao" expression="iteracao + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

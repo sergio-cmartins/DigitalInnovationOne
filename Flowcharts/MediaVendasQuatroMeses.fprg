@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kager"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-23 04:30:49 PM"/>
+        <attribute name="created" value="a2FnZXI7REVTS1RPUC1TRVJHSU87MjAyMC0wNS0yMzswNDoxODoxMSBQTTsyODM1"/>
+        <attribute name="edited" value="a2FnZXI7REVTS1RPUC1TRVJHSU87MjAyMC0wNS0yMzswNDozMDo0OSBQTTsxOzI5NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="VendasJaneiro, VendasFevereiro, VendasMarco, VendasAbril, Media, Bonus, ValorBonus" type="Real" array="False" size=""/>
+            <input variable="VendasJaneiro"/>
+            <input variable="VendasFevereiro"/>
+            <input variable="VendasMarco"/>
+            <input variable="VendasAbril"/>
+            <assign variable="Media" expression="(VendasJaneiro+VendasFevereiro+VendasMarco+VendasAbril)/4"/>
+            <if expression="Media &gt;= 5000">
+                <then>
+                    <assign variable="Bonus" expression="0.1"/>
+                    <output expression="&quot;Parab&#233;ns, voc&#234; atingiu a meta de vendas m&#233;dias, seu bonus ser&#225; de 10%&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="Bonus" expression="0.03"/>
+                    <output expression="&quot;Voc&#234; n&#227;o atingiu a Meta de Vendas m&#233;dias, seu bonus ser&#225; de 3%&quot;" newline="True"/>
+                </else>
+            </if>
+            <assign variable="ValorBonus" expression="Media*Bonus"/>
+            <output expression="&quot;M&#233;dia de Vendas: &quot; &amp; Media &amp; &quot;, Bonus: &quot; &amp; ValorBonus" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
