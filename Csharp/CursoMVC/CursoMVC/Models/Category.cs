@@ -10,6 +10,8 @@ namespace CursoMVC.Models
     {
         public int Id { get; set; }
         [Display(Name = "Descrição")]   public string Description { get; set; }
-        [Display(Name = "Produtos")]    public List<Product> Products { get; set; }
+
+        // disabling product list, since each product already have the category ID
+        //[Display(Name = "Produtos")]    public List<Product> Products { get; set; }
     }
 }
