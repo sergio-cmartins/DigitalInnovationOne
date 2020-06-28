@@ -25,32 +25,33 @@ class Televisao:
 
     def status(self):
         if not self.ligado:
-            print('*** A televisao se encontra desligada ***')
+            return '*** A televisao se encontra desligada ***'
         else:
-            print(f'***A televisao está ligada no canal {self.canal} ***')
+            return f'***A televisao está ligada no canal {self.canal} ***'
 
 
-print('Um simples exemplo de uma clase Televisão')
-print('\nInstanciando a classe e verificando o status inicial:')
-tv = Televisao()
-tv.status()
-print('\nExecutando a funcao liga_desliga e verificando novamente o status')
-tv.liga_desliga()
-tv.status()
-print('\nExecutando a funcao volta_canal e verificando novamente o status')
-tv.volta_canal()
-tv.status()
-print('\nExecutando novamente a funcao volta_canal'
-      '\nA tv deve ir para o canal maximo pois não tem canal 0:')
-tv.volta_canal()
-tv.status()
-print('\nExecutando a funcao volta_canal e verificando novamente o status')
-tv.volta_canal()
-tv.status()
-print('\nExecutando a funcao avanca_canal e verificando novamente o status')
-tv.avanca_canal()
-tv.status()
-print('\nExecutando novamente a funcao avanca_canal'
-      '\nA tv deve ir para o canal 1 pois o maior canal é 13:')
-tv.avanca_canal()
-tv.status()
+if __name__ == '__main__':  # garante que o codigo só é executado do proprio arquivo
+    print('Um simples exemplo de uma clase Televisão')
+    print('\nInstanciando a classe e verificando o status inicial:')
+    tv = Televisao()
+    print(tv.status())
+    print('\nExecutando a funcao liga_desliga e verificando novamente o status')
+    tv.liga_desliga()
+    print(tv.status())
+    print('\nExecutando a funcao volta_canal e verificando novamente o status')
+    tv.volta_canal()
+    print(tv.status())
+    print('\nExecutando novamente a funcao volta_canal'
+          '\nA tv deve ir para o canal maximo pois não tem canal 0:')
+    tv.volta_canal()
+    print(tv.status())
+    print('\nExecutando a funcao volta_canal e verificando novamente o status')
+    tv.volta_canal()
+    print(tv.status())
+    print('\nExecutando a funcao avanca_canal e verificando novamente o status')
+    tv.avanca_canal()
+    print(tv.status())
+    print('\nExecutando novamente a funcao avanca_canal'
+          '\nA tv deve ir para o canal 1 pois o maior canal é 13:')
+    tv.avanca_canal()
+    print(tv.status())

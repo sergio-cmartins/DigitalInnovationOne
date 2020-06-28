@@ -30,19 +30,20 @@ class Calculadora:
         return value_1 ** value_2
 
 
-print('Usando métodos/funções:')
-a = int(input('Digite o valor de a: '))
-b = int(input('Digite o valor de b: '))
+if __name__ == '__main__':
+    print('Usando métodos/funções:')
+    a = int(input('Digite o valor de a: '))
+    b = int(input('Digite o valor de b: '))
 
-print('\nUsando os metodos Isolados:')
-print(f'Método soma_sa(a, b): {soma_sa(a, b)}')
-print(f'Método subtracao_sa(a, b): {subtracao_sa(a, b)}')
+    print('\nUsando os metodos Isolados:')
+    print(f'Método soma_sa(a, b): {soma_sa(a, b)}')
+    print(f'Método subtracao_sa(a, b): {subtracao_sa(a, b)}')
 
-print('\nUsando os metodos da classe calculadora:')
-print('Atribuindo os valores (calc = Calculadora(a, b))')
-calc = Calculadora(a, b)
-print(f'Método soma(): {calc.soma()}')
-print(f'Método subtracao(): {calc.subtracao()}')
-print(f'Método multiplicacao(): {calc.multiplicacao()}')
-print(f'Método divisao(): {calc.divisao()}')
-print(f'Metodo estático Calculadora.potencia(a, b): {Calculadora.potencia(a, b)}')
+    print('\nUsando os metodos da classe calculadora:')
+    print('Atribuindo os valores (calc = Calculadora(a, b))')
+    calc = Calculadora(a, b)
+    print(f'Método soma(): {calc.soma()}')
+    print(f'Método subtracao(): {calc.subtracao()}')
+    print(f'Método multiplicacao(): {calc.multiplicacao()}')
+    print(f'Método divisao(): {calc.divisao()}')
+    print(f'Metodo estático Calculadora.potencia(a, b): {Calculadora.potencia(a, b)}')
