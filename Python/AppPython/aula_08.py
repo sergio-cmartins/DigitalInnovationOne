@@ -1,6 +1,6 @@
-from aula_7_televisao import Televisao
-from aula_7_calculadora import Calculadora
-from aula_7_calculadora import soma_sa
+from aula_07_televisao import Televisao
+from aula_07_calculadora import Calculadora
+from aula_07_calculadora import soma_sa
 
 if __name__ == '__main__':
     print('Primeira parte: uso de modulos')
