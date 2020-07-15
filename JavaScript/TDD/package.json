@@ -1,0 +1,21 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "Aulas TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "TDD"
+  ],
+  "author": "Sergio Martins (sergio.cmartins@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
+}
