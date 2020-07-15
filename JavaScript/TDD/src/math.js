@@ -10,6 +10,9 @@ class Math{
   multiply(...args){
     return args.reduce((total,current) => total * current, 1)
   };
+  printSum(req, res, a, b){
+    res.load('index', a + b);
+  }
 }
 
 module.exports = Math;

@@ -1,7 +1,16 @@
-const assert = require('assert');
 const Math = require('../src/math.js');
+const assert = require('assert');
+const expect = require('chai').expect;
+const sinon = require('sinon');
 
-let five;
+//Pode se verificar todas as acerções do Chai em
+// https://www.chaijs.com/api/
+
+//Sinon é utilizado para criar mocks de funções
+// https://sinonjs.org
+
+
+let a;
 
 describe('Math class', function(){
   //Hooks
@@ -13,10 +22,8 @@ describe('Math class', function(){
 
     const math = new Math();
 
-    assert.equal(math.sum(a,5), 10);
-
-    //math.sum2(8,8, value);
-    //assert.equal(value, 16);
+    //assert.equal(math.sum(a,5), 10);
+    expect(math.sum(a,5)).to.equal(10);
 
   });
   
@@ -26,6 +33,7 @@ describe('Math class', function(){
 
     a = 3
     assert.equal(math.sum(1,2,a), 6);
+    //expect(math.sum(1,2,a)).to.equal(6);
   });
   
   it('Sum numbers with callBack', function(done){
@@ -37,19 +45,47 @@ describe('Math class', function(){
     this.timeout(500);
 
     math.sumCB((value) =>{
-      assert.equal(value, 11);
+      //assert.equal(value, 11);
+      expect(value).to.equal(11);
       done(); //necessário para testar funcões assincronas, senão pode sempre retornar ok mesmo em caso de erro
     }, 1, 2, 3, a); 
   });
 
-  //Com only apenas o metodo é chamado
-  //it.only('Multiply Numbers', function(){
   it('Multiply Numbers', function(){
     const math = new Math();
 
-    assert.equal(math.multiply(5,5,2), 50);
+    //assert.equal(math.multiply(5,5,2), 50);
+    expect(math.multiply(5,5,2)).to.equal(50);
   });
 
   //Sem definição o teste é skipado
   it('Divisão de numeros')
+
+  it('Testando propriedade', function(){
+    const objAluno ={
+      nome: 'Antonio Carlos',
+      Id: 1256,
+      sala: '1c'
+    }
+
+    //possivel testar propriedades e valores com chai expect
+    expect(objAluno)
+      .to.have.property('sala')
+      .equal('1c');
+  })
+
+  //Com only apenas o metodo é chamado
+  it.only('Testando response com sum e valores index', function(){
+    const req = {};
+    const res = {
+      load: sinon.spy()
+    };
+    const math = new Math();
+
+    math.printSum(req, res, 5, 5);
+
+    expect(res.load.calledOnce).to.be.true;
+
+  })
+
 });

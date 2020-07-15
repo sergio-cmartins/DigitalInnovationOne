@@ -12,7 +12,9 @@
   "author": "Sergio Martins (sergio.cmartins@gmail.com)",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^8.0.1"
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "sinon": "^9.0.2"
   },
   "directories": {
     "test": "test"
