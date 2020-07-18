@@ -1,28 +1,42 @@
 import { Course } from './course';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CourseService {
-  retrieveAll(): Course[] {
-    return COURSES;
+
+  private coursesUrl = 'http://localhost:3100/api/courses';
+
+  constructor( private httpClient: HttpClient) {
+
   }
 
-  retrieveById(id: number): Course {
-    return COURSES.find((courseIterator: Course) => courseIterator.id === id);
+  retrieveAll(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.coursesUrl);
   }
 
-  save(course: Course): void {
+  retrieveById(id: number): Observable<Course> {
+    return this.httpClient.get<Course>(`${this.coursesUrl}/${id}`); // uso da crase para criar uma string concatenavel...
+  }
+
+  save(course: Course): Observable<Course> {
     if (course.id) {
-      const index = COURSES.findIndex((courseIterator: Course) => courseIterator.id === course.id);
-      COURSES[index] = course;
+      return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course);
+    } else {
+      return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
     }
+  }
 
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.coursesUrl}/${id}`);
   }
 }
 
+/*
 const COURSES: Course[] = [
   {
       id: 1,
@@ -80,3 +94,4 @@ const COURSES: Course[] = [
       imageUrl: '/assets/images/animations.png',
   }
 ];
+*/
