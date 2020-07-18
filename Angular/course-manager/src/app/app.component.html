@@ -1,14 +1,6 @@
-<!--{{ title }}
-<br/>
-{{ name }}
-<br/>
-One way data-bind:
-<input [ngModel]="name" name="input1">
-<br/>
-Two Way data-bind:
-<input [(ngModel)]="name" name="input2">
--->
-<div class="container">
-  <app-course-list></app-course-list>
-</div>
+<app-nav-bar></app-nav-bar>
+<div class="container mt-4">
+  <!--<app-course-list></app-course-list>--><!-- No longer uses selector -->
+  <router-outlet></router-outlet>
 
+</div>
