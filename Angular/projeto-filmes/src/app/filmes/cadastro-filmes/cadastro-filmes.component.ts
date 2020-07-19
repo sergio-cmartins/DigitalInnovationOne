@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { Alerta } from './../../shared/models/alerta';
+import { AlertaComponent } from './../../shared/components/alerta/alerta.component';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 import { Filme } from 'src/app/shared/models/filme';
 import { FilmesService } from './../../core/filmes.service';
@@ -16,8 +21,10 @@ export class CadastroFilmesComponent implements OnInit {
 
   constructor(
     public validacao: ValidarCamposService,
+    public dialog: MatDialog,
     private fb: FormBuilder,
-    private filmeService: FilmesService
+    private filmeService: FilmesService,
+    private router: Router
   ) { }
 
   get f() {
@@ -67,10 +74,35 @@ export class CadastroFilmesComponent implements OnInit {
   private salvar(filme: Filme): void {
     this.filmeService.salvar(filme).subscribe(
       () => {
-        alert('SUCESSO');
+        const config = {
+          data:  {
+            titulo : 'Sucesso!',
+            descricao : 'Filme Cadastrado com sucesso',
+            btnPrimario : 'Ir para listagem',
+            possuiBtnSecundario: true,
+            btnSecundario : 'Cadastrar outro filme',
+            corBtnSecundario : 'primary'
+          } as Alerta
+        };
+        const dialogRef = this.dialog.open(AlertaComponent, config);
+        dialogRef.afterClosed().subscribe((opcao: boolean) => {
+          if (opcao) {
+            this.router.navigateByUrl('filmes');
+          } else {
+            this.reiniciarForm();
+          }
+        });
       },
       () => {
-        alert('ERRO AO SALVAR');
+        const config = {
+          data:  {
+            titulo : 'Erro ao Salvar!',
+            descricao : 'Ocorreu um Erro ao Salvar o Filme, por favor tente novamente mais tarde..',
+            btnPrimario : 'Fechar',
+            corBtnPrimario: 'warn'
+          } as Alerta
+        };
+        const dialogRef = this.dialog.open(AlertaComponent, config);
       }
     );
   }

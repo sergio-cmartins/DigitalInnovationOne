@@ -109,16 +109,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
-    },
-    {
-      "titulo": "Coringa",
-      "urlFoto": "https://www.imdb.com/title/tt7286456/mediaviewer/rm3353122305?ref_=tt_ov_i",
-      "dtLancamento": "2019-10-03T03:00:00.000Z",
-      "descricao": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
-      "nota": 8.5,
-      "urlIMDb": "https://www.imdb.com/title/tt7286456/?ref_=hm_fanfav_tt_5_pd_fp1",
-      "genero": "Drama",
-      "id": 12
     }
   ]
 }
